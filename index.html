@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rob-Stal - Usługi Spawalnicze i Obróbka Metalu</title>
+    <meta
+      name="description"
+      content="Profesjonalne usługi spawalnicze, konstrukcje stalowe, cięcie plazmowe CNC i obróbka metalu. Gwarancja jakości i precyzji."
+    />
+    <meta
+      name="keywords"
+      content="spawanie, spawalnictwo, obróbka metalu, konstrukcje stalowe, cięcie plazmowe, balustrady, ogrodzenia"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        scroll-behavior: smooth;
+      }
+      .hero-bg {
+        background-image: linear-gradient(
+            rgba(17, 24, 39, 0.8),
+            rgba(17, 24, 39, 0.8)
+          ),
+          url("./desktop.png");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+
+      @media (max-width: 768px) {
+        .hero-bg {
+          background-image: linear-gradient(
+              rgba(17, 24, 39, 0.8),
+              rgba(17, 24, 39, 0.8)
+            ),
+            url("./mobile.png");
+          background-attachment: scroll;
+        }
+      }
+
+      .section-title {
+        font-weight: 900;
+        letter-spacing: -0.05em;
+      }
+      .accent-color {
+        color: #f59e0b;
+      }
+      .bg-accent-color {
+        background-color: #f59e0b;
+      }
+      .hover\:bg-accent-hover:hover {
+        background-color: #d97706;
+      }
+
+      .nav-link.active {
+        color: #f59e0b;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-gray-200">
+    <header
+      id="header"
+      class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 transition-all duration-300"
+    >
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <a href="#" class="flex-shrink-0">
+            <img src="./logo.png" alt="Rob-Stal Logo" class="h-10 w-auto" />
+          </a>
+
+          <div class="flex items-center gap-8">
+            <nav class="hidden md:flex md:space-x-8">
+              <a
+                href="#o-nas"
+                class="nav-link text-gray-300 hover:accent-color transition-colors duration-200 font-semibold"
+                >O nas</a
+              >
+              <a
+                href="#uslugi"
+                class="nav-link text-gray-300 hover:accent-color transition-colors duration-200 font-semibold"
+                >Usługi</a
+              >
+              <a
+                href="#realizacje"
+                class="nav-link text-gray-300 hover:accent-color transition-colors duration-200 font-semibold"
+                >Realizacje</a
+              >
+              <a
+                href="#kontakt"
+                class="nav-link text-gray-300 hover:accent-color transition-colors duration-200 font-semibold"
+                >Kontakt</a
+              >
+            </nav>
+
+            <a
+              href="tel:+48123456789"
+              class="hidden md:flex items-center gap-2 bg-gray-700/50 border border-gray-600 px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors"
+            >
+              <i data-lucide="phone" class="w-4 h-4 accent-color"></i>
+              <span class="text-sm font-semibold accent-color"
+                >123 456 789</span
+              >
+            </a>
+          </div>
+
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-button"
+              class="text-gray-300 hover:text-white focus:outline-none"
+            >
+              <i data-lucide="menu" class="h-6 w-6"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="#o-nas"
+            class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+            >O nas</a
+          >
+          <a
+            href="#uslugi"
+            class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+            >Usługi</a
+          >
+          <a
+            href="#realizacje"
+            class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+            >Realizacje</a
+          >
+          <a
+            href="#kontakt"
+            class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+            >Kontakt</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-bg">
+        <div
+          class="container mx-auto px-4 sm:px-6 lg:px-8 h-screen min-h-[600px] flex items-center justify-center text-center"
+        >
+          <div>
+            <h2
+              class="text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-tight"
+            >
+              Precyzja i Pasja <br />
+              w <span class="accent-color">Każdym Spawie</span>
+            </h2>
+            <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-300">
+              Nowoczesne spawalnictwo i kompleksowa obróbka metalu. Realizujemy
+              projekty dla przemysłu i klientów indywidualnych.
+            </p>
+            <div class="mt-8 flex justify-center gap-4">
+              <a
+                href="#kontakt"
+                class="bg-accent-color text-gray-900 font-bold py-3 px-8 rounded-lg text-lg hover:bg-accent-hover transition-all duration-300 transform hover:scale-105"
+              >
+                Wyceń projekt
+              </a>
+              <a
+                href="#uslugi"
+                class="bg-gray-700/50 border border-gray-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-gray-700 transition-all duration-300"
+              >
+                Zobacz usługi
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="o-nas" class="py-20 md:py-32 bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div>
+              <h3 class="text-4xl md:text-5xl section-title text-white">
+                Poznaj <span class="accent-color">Rob-Stal</span>
+              </h3>
+              <p class="mt-6 text-lg text-gray-400">
+                Jesteśmy firmą z wieloletnim doświadczeniem w branży
+                spawalniczej i metalowej. Naszą misją jest dostarczanie
+                najwyższej jakości produktów i usług, które spełniają
+                oczekiwania nawet najbardziej wymagających klientów.
+              </p>
+              <p class="mt-4 text-lg text-gray-400">
+                Łączymy tradycyjne rzemiosło z nowoczesnymi technologiami, co
+                pozwala nam realizować zlecenia precyzyjnie, terminowo i z
+                dbałością o każdy detal. Zaufaj profesjonalistom.
+              </p>
+              <div class="mt-8 grid grid-cols-2 gap-6">
+                <div class="flex items-center gap-3">
+                  <i
+                    data-lucide="shield-check"
+                    class="w-8 h-8 accent-color"
+                  ></i>
+                  <span class="font-semibold text-white"
+                    >Doświadczeni Spawacze</span
+                  >
+                </div>
+                <div class="flex items-center gap-3">
+                  <i data-lucide="cpu" class="w-8 h-8 accent-color"></i>
+                  <span class="font-semibold text-white"
+                    >Nowoczesny Park Maszynowy</span
+                  >
+                </div>
+                <div class="flex items-center gap-3">
+                  <i data-lucide="clock" class="w-8 h-8 accent-color"></i>
+                  <span class="font-semibold text-white"
+                    >Terminowość Realizacji</span
+                  >
+                </div>
+                <div class="flex items-center gap-3">
+                  <i data-lucide="user-check" class="w-8 h-8 accent-color"></i>
+                  <span class="font-semibold text-white"
+                    >Indywidualne Podejście</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="rounded-lg overflow-hidden shadow-2xl">
+              <img
+                src="./spawacz.png"
+                alt="Spawacz przy pracy w warsztacie"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="uslugi" class="py-20 md:py-32 bg-gray-800/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h3 class="text-4xl md:text-5xl section-title text-white">
+            Nasze <span class="accent-color">Usługi</span>
+          </h3>
+          <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-400">
+            Oferujemy szeroki zakres usług związanych ze spawaniem i obróbką
+            metali. Specjalizujemy się w realizacjach na zamówienie.
+          </p>
+          <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div
+              class="bg-gray-900 p-8 rounded-lg text-left transform hover:-translate-y-2 transition-transform duration-300 shadow-lg"
+            >
+              <div class="inline-block p-3 rounded-md bg-accent-color/10">
+                <i data-lucide="sparkles" class="w-8 h-8 accent-color"></i>
+              </div>
+              <h4 class="mt-4 text-xl font-bold text-white">
+                Spawanie TIG / MIG / MAG
+              </h4>
+              <p class="mt-2 text-gray-400">
+                Precyzyjne spawanie stali nierdzewnej, aluminium i stali
+                czarnej. Gwarantujemy trwałe i estetyczne spoiny.
+              </p>
+            </div>
+            <div
+              class="bg-gray-900 p-8 rounded-lg text-left transform hover:-translate-y-2 transition-transform duration-300 shadow-lg"
+            >
+              <div class="inline-block p-3 rounded-md bg-accent-color/10">
+                <i data-lucide="move-3d" class="w-8 h-8 accent-color"></i>
+              </div>
+              <h4 class="mt-4 text-xl font-bold text-white">
+                Konstrukcje Stalowe
+              </h4>
+              <p class="mt-2 text-gray-400">
+                Projektowanie i wykonawstwo hal, wiat, antresol, schodów oraz
+                innych konstrukcji nośnych.
+              </p>
+            </div>
+            <div
+              class="bg-gray-900 p-8 rounded-lg text-left transform hover:-translate-y-2 transition-transform duration-300 shadow-lg"
+            >
+              <div class="inline-block p-3 rounded-md bg-accent-color/10">
+                <i data-lucide="scan-line" class="w-8 h-8 accent-color"></i>
+              </div>
+              <h4 class="mt-4 text-xl font-bold text-white">
+                Cięcie Plazmowe CNC
+              </h4>
+              <p class="mt-2 text-gray-400">
+                Precyzyjne wycinanie dowolnych kształtów z arkuszy blach za
+                pomocą nowoczesnej wycinarki plazmowej.
+              </p>
+            </div>
+            <div
+              class="bg-gray-900 p-8 rounded-lg text-left transform hover:-translate-y-2 transition-transform duration-300 shadow-lg"
+            >
+              <div class="inline-block p-3 rounded-md bg-accent-color/10">
+                <i data-lucide="fence" class="w-8 h-8 accent-color"></i>
+              </div>
+              <h4 class="mt-4 text-xl font-bold text-white">
+                Balustrady i Ogrodzenia
+              </h4>
+              <p class="mt-2 text-gray-400">
+                Nowoczesne balustrady, poręcze, bramy i ogrodzenia metalowe
+                dopasowane do Twojego stylu.
+              </p>
+            </div>
+            <div
+              class="bg-gray-900 p-8 rounded-lg text-left transform hover:-translate-y-2 transition-transform duration-300 shadow-lg"
+            >
+              <div class="inline-block p-3 rounded-md bg-accent-color/10">
+                <i data-lucide="wrench" class="w-8 h-8 accent-color"></i>
+              </div>
+              <h4 class="mt-4 text-xl font-bold text-white">Obróbka Metali</h4>
+              <p class="mt-2 text-gray-400">
+                Szeroki zakres usług ślusarskich: gięcie, walcowanie, wiercenie
+                i inne prace na zamówienie.
+              </p>
+            </div>
+            <div
+              class="bg-gray-900 p-8 rounded-lg text-left transform hover:-translate-y-2 transition-transform duration-300 shadow-lg"
+            >
+              <div class="inline-block p-3 rounded-md bg-accent-color/10">
+                <i
+                  data-lucide="drafting-compass"
+                  class="w-8 h-8 accent-color"
+                ></i>
+              </div>
+              <h4 class="mt-4 text-xl font-bold text-white">
+                Projekty na Zamówienie
+              </h4>
+              <p class="mt-2 text-gray-400">
+                Masz nietypowy pomysł? Realizujemy indywidualne projekty
+                metaloplastyczne i meble industrialne.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="realizacje" class="py-20 md:py-32 bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h3 class="text-4xl md:text-5xl section-title text-white">
+            Nasze <span class="accent-color">Realizacje</span>
+          </h3>
+          <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-400">
+            Zobacz wybrane projekty, które zrealizowaliśmy dla naszych klientów.
+            Każdy z nich to dowód naszej precyzji i zaangażowania.
+          </p>
+          <div
+            class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+          >
+            <div class="group relative overflow-hidden rounded-lg">
+              <img
+                src="./Kontrukcja.png"
+                alt="Realizacja 1"
+                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-black/50 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <h4 class="text-white text-xl font-bold">
+                  Konstrukcja stalowa hali
+                </h4>
+              </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-lg">
+              <img
+                src="./Lyzka-mala.png"
+                alt="Realizacja 2"
+                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-black/50 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <h4 class="text-white text-xl font-bold">Łyżka do koparki</h4>
+              </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-lg">
+              <img
+                src="./Lyzka-duza.png"
+                alt="Realizacja 3"
+                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-black/50 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <h4 class="text-white text-xl font-bold">Łyżka do Ładowarki</h4>
+              </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-lg">
+              <img
+                src="./blacha.png"
+                alt="Realizacja 4"
+                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-black/50 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <h4 class="text-white text-xl font-bold">Gięcie Blachy</h4>
+              </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-lg">
+              <img
+                src="./cnc.png"
+                alt="Realizacja 5"
+                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-black/50 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <h4 class="text-white text-xl font-bold">
+                  Elementy cięte plazmą
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="kontakt" class="py-20 md:py-32 bg-gray-800/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h3 class="text-4xl md:text-5xl section-title text-white">
+              Skontaktuj się <span class="accent-color">z nami</span>
+            </h3>
+            <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-400">
+              Masz pytania lub chcesz omówić swój projekt? Wypełnij formularz,
+              zadzwoń lub odwiedź nas w naszej siedzibie.
+            </p>
+          </div>
+          <div class="mt-16 max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
+            <div class="space-y-8">
+              <div>
+                <h4
+                  class="text-xl font-bold text-white flex items-center gap-3"
+                >
+                  <i data-lucide="map-pin" class="w-6 h-6 accent-color"></i>
+                  Adres
+                </h4>
+                <p class="mt-2 text-gray-400">
+                  Grzęby 45E, 87-335 Świedziebnia
+                </p>
+              </div>
+              <div>
+                <h4
+                  class="text-xl font-bold text-white flex items-center gap-3"
+                >
+                  <i data-lucide="phone" class="w-6 h-6 accent-color"></i>
+                  Telefon
+                </h4>
+                <a
+                  href="tel:+48123456789"
+                  class="mt-2 text-gray-400 hover:accent-color transition-colors"
+                  >+48 123 456 789</a
+                >
+              </div>
+              <div>
+                <h4
+                  class="text-xl font-bold text-white flex items-center gap-3"
+                >
+                  <i data-lucide="mail" class="w-6 h-6 accent-color"></i> Email
+                </h4>
+                <a
+                  href="mailto:biuro@metaltech-spaw.pl"
+                  class="mt-2 text-gray-400 hover:accent-color transition-colors"
+                  >robstal@gmail.com</a
+                >
+              </div>
+              <div>
+                <h4
+                  class="text-xl font-bold text-white flex items-center gap-3"
+                >
+                  <i data-lucide="clock" class="w-6 h-6 accent-color"></i>
+                  Godziny otwarcia
+                </h4>
+                <p class="mt-2 text-gray-400">
+                  Poniedziałek - Piątek: 8:00 - 17:00
+                </p>
+              </div>
+            </div>
+            <form id="contact-form" class="space-y-6">
+              <div>
+                <label for="name" class="sr-only">Imię i nazwisko</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Imię i nazwisko"
+                  required
+                  class="w-full bg-gray-900 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-amber-500"
+                />
+              </div>
+              <div>
+                <label for="email" class="sr-only">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Adres email"
+                  required
+                  class="w-full bg-gray-900 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-amber-500"
+                />
+              </div>
+              <div>
+                <label for="message" class="sr-only">Wiadomość</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  rows="5"
+                  placeholder="Twoja wiadomość..."
+                  required
+                  class="w-full bg-gray-900 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-amber-500"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-accent-color text-gray-900 font-bold py-3 px-8 rounded-lg text-lg hover:bg-accent-hover transition-all duration-300"
+              >
+                Wyślij wiadomość
+              </button>
+              <div id="form-status" class="mt-4 text-center"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-gray-900">
+      <div
+        class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-500"
+      >
+        <p>
+          &copy; <span id="current-year"></span> Rob-Stal. Wszelkie prawa
+          zastrzeżone.
+        </p>
+        <p class="text-sm mt-1">
+          Projekt i wykonanie strony: Mateusz Wawrowski
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+      mobileMenuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+
+      const header = document.getElementById("header");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          header.classList.add("bg-gray-900");
+          header.classList.remove("bg-gray-900/80");
+        } else {
+          header.classList.remove("bg-gray-900");
+          header.classList.add("bg-gray-900/80");
+        }
+      });
+
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          const offset = 150;
+          if (
+            pageYOffset >= sectionTop - offset &&
+            pageYOffset < sectionTop + sectionHeight - offset
+          ) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href").includes(current)) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+      const contactForm = document.getElementById("contact-form");
+      const formStatus = document.getElementById("form-status");
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        formStatus.textContent = "Wysyłanie...";
+        formStatus.className = "text-blue-400";
+
+        setTimeout(() => {
+          formStatus.textContent =
+            "Dziękujemy za wiadomość! Skontaktujemy się wkrótce.";
+          formStatus.className = "text-green-400";
+          contactForm.reset();
+          setTimeout(() => {
+            formStatus.textContent = "";
+          }, 5000);
+        }, 1500);
+      });
+    </script>
+  </body>
+</html>
